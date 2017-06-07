@@ -1,12 +1,17 @@
+# Version 0.3
+
+#import natsort
 from django.core import validators
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.files.storage import FileSystemStorage
+from django.core.urlresolvers import reverse
 from django.shortcuts import _get_queryset
 from django.utils import timezone
+from django.utils.functional import lazy
 from pprint import pprint, pformat
 import datetime
-#import natsort
 import pydash as _
+import urllib
 
 
 def get_or_none(klass, *args, **kwargs):
@@ -75,3 +80,10 @@ def to_local_datetime(obj):
         obj = timezone.utc.localize(obj)
 
     return obj
+
+
+def reverse_with_query_(url_name, query, *args, **kwargs):
+    return reverse(url_name, *args, **kwargs) + '?' + urllib.parse.urlencode(query)
+
+
+reverse_with_query = lazy(reverse_with_query_)

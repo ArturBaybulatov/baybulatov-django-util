@@ -26,10 +26,10 @@
     <Content Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="baybulatov_django_util_0_1\" />
+    <Folder Include="baybulatov_django_util\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="baybulatov_django_util_0_1\djutil.py" />
+    <Compile Include="baybulatov_django_util\djutil.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
